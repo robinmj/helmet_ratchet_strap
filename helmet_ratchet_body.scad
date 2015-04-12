@@ -1,3 +1,11 @@
+//due to use of offset() function, requires OpenSCAD 2015.03 or later
+
+// In order to fit the backband, this piece needs to be cylindrically
+// deformed before printing.
+// I do this in MeshLab using
+//  Filters->Smoothing, Fairing and Deformation->Geometric Function
+// and then entering in z+sqrt(8100-(x-35)^2)+90 for the z function
+
 bodyPolygon = [[0,10],[0,20],[10,24],[20,27],[30,28],[40,29],[50,30],[68,30],[70,28],
 [70,2],[68,0],[50,0],[40,1],[30,2],[20,3],[10,6],
 [56,10],[63,7],[63,25],[56,22]];
