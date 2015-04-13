@@ -37,10 +37,10 @@ union() {
     //teeth (dz should be 3.75, reduced slightly to eliminate warning
     translate([56.5,12.5,3.749])
     rotate([-90,0,0]) {
-        linear_extrude(7) {
+        linear_extrude(height=7) {
             polygon(points = [[0,0],[0,2],[2,2]]);
         }
-        linear_extrude(7) {
+        linear_extrude(height=7) {
             polygon(points = [[2,0],[2,2],[4,2]]);
         }
     }

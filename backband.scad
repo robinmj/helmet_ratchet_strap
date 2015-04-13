@@ -20,7 +20,7 @@ module tooth() {
 	difference() {
 		cube([toothWidth,toothSectionDepth,height]);
 		translate([0,0,rimHeight]) {
-			linear_extrude(height-(2 * rimHeight)) {
+			linear_extrude(height=height-(2 * rimHeight)) {
 				polygon(points = [[0,0], [toothWidth,toothDepth], [toothWidth,0]]);
 			}
 		}
@@ -43,7 +43,7 @@ module side() {
 	//end piece
 	rotate(28 * (2 * asin((toothWidth / 2) / (radius + toothSectionDepth))),[0,0,-1]) {
 		translate([0,radius,0]) {
-			linear_extrude(height) {
+			linear_extrude(height=height) {
 				polygon(points = [[0,0], [0,1 + toothSectionDepth], [1 + toothSectionDepth,0]]);
 			}
 		}
