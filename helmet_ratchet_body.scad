@@ -4,7 +4,7 @@
 // deformed before printing.
 // I do this in MeshLab using
 //  Filters->Smoothing, Fairing and Deformation->Geometric Function
-// and then entering in z+sqrt(8100-(x-35)^2)+90 for the z function
+// and then entering in z+sqrt(80^2-(x-35)^2)+80 for the z function
 
 bodyPolygon = [[0,10],[0,20],[10,24],[20,27],[30,28],[40,29],[50,30],[68,30],[70,28],
 [70,2],[68,0],[50,0],[40,1],[30,2],[20,3],[10,6],
@@ -49,14 +49,14 @@ union() {
         cylinder(r=0.75,h=7,$fn=20);
     }
     
-    //teeth (z should be 2.75, reduced slightly to eliminate warning
-    translate([57,12.5,2.749])
+    //teeth (dz should be 3.75, reduced slightly to eliminate warning
+    translate([57,12.5,3.749])
     rotate([-90,0,0]) {
         linear_extrude(7) {
-            polygon(points = [[0,0],[0,1],[1,1]]);
+            polygon(points = [[0,0],[0,2],[2,2]]);
         }
         linear_extrude(7) {
-            polygon(points = [[1,0],[1,1],[2,1]]);
+            polygon(points = [[2,0],[2,2],[4,2]]);
         }
     }
 }

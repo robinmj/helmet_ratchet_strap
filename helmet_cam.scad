@@ -2,7 +2,7 @@
 // deformed before printing.
 // I do this in MeshLab using
 //  Filters->Smoothing, Fairing and Deformation->Geometric Function
-// and then entering in z+sqrt(8100-(x-35)^2)-90 for the z function
+// and then entering in z+sqrt(80^2-(x-35)^2)-80 for the z function
 
 difference() {
     union() {

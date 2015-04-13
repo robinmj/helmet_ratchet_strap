@@ -1,19 +1,19 @@
 /*intersection() {
 	linear_extrude(height=9) {
-		polygon(points = [[0,87], [87,0], [200,200]]);
+		polygon(points = [[0,78], [78,0], [200,200]]);
 	}
 	
 	difference() {
-		cylinder(r=90,h=9,$fn=200);
-		cylinder(r=87,h=9,$fn=200);
+		cylinder(r=80,h=9,$fn=200);
+		cylinder(r=78,h=9,$fn=200);
 	}
 }*/
 
-radius = 90;
+radius = 80;
 height = 9;
-toothWidth = 1;
-toothDepth = 1;
-toothSectionDepth = 3;
+toothWidth = 2;
+toothDepth = 1.75;
+toothSectionDepth = 2;
 rimHeight = 1;
 
 module tooth() {
@@ -28,10 +28,10 @@ module tooth() {
 }
 
 module side() {
-	for(i = [0:55]) {
+	for(i = [0:27]) {
 		rotate(i * (2 * asin((toothWidth / 2) / (radius + toothSectionDepth))),[0,0,-1]) {
 			translate([0,radius,0]) {
-				if(i < 20) {
+				if(i < 9) {
 					cube([toothWidth,toothSectionDepth,height]);
 				} else {
 					tooth();
@@ -41,10 +41,10 @@ module side() {
 	}
 	
 	//end piece
-	rotate(56 * (2 * asin((toothWidth / 2) / (radius + toothSectionDepth))),[0,0,-1]) {
+	rotate(28 * (2 * asin((toothWidth / 2) / (radius + toothSectionDepth))),[0,0,-1]) {
 		translate([0,radius,0]) {
 			linear_extrude(height) {
-				polygon(points = [[0,0], [0,2 + toothSectionDepth], [2 + toothSectionDepth,0]]);
+				polygon(points = [[0,0], [0,1 + toothSectionDepth], [1 + toothSectionDepth,0]]);
 			}
 		}
 	}
