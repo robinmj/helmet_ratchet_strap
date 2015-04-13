@@ -2,7 +2,7 @@
 // deformed before printing.
 // I do this in MeshLab using
 //  Filters->Smoothing, Fairing and Deformation->Geometric Function
-// and then entering in z+sqrt(80^2-(x-35)^2)+80 for the z function
+// and then entering in z+sqrt(80^2-(x-35)^2)-80 for the z function
 
 bodyPolygon = [[0,10],[0,20],[10,24],[20,27],[30,28.5],[40,29.5],[50,30],[68,30],[70,28],
 [70,2],[68,0],[50,0],[40,0.5],[30,1.5],[20,3],[10,6],
@@ -12,8 +12,8 @@ union() {
     difference() {
         union() {
             //body
-            linear_extrude(2) {
-                polygon(points = bodyPolygon, paths = [[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],[16,17,18,19,20,21,22,23,24,25]]);
+            linear_extrude(height=2) {
+                polygon(points = bodyPolygon, paths = [[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],[16,17,18,19,20,21,22,23,24,25]],convexity=6);
             }
         }
         union() {
