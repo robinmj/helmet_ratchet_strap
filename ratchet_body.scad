@@ -48,6 +48,10 @@ union() {
         }
     }
     
+    //strap retainer
+    translate([0,19.5,2.7]) rotate([0,90,0]) cylinder(r=0.5,h=8,$fn=8);
+    
+    //flap buttons
     translate([58.5,8.25,2]) sphere(r=1.75,$fn=20);
     translate([58.5,21.75,2]) sphere(r=1.75,$fn=20);
     
