@@ -15,8 +15,25 @@ union() {
             linear_extrude(height=2) {
                 polygon(points = bodyPolygon, paths = [[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],[16,17,18,19,20,21,22,23,24,25]],convexity=6);
             }
+            
+            polyhedron(points = [[bodyPolygon[0][0],bodyPolygon[0][1],2],
+                [bodyPolygon[1][0],bodyPolygon[1][1],2],
+                [bodyPolygon[2][0],bodyPolygon[2][1],2],
+                [bodyPolygon[3][0],bodyPolygon[3][1],2],
+                [bodyPolygon[14][0],bodyPolygon[14][1],2],
+                [bodyPolygon[15][0],bodyPolygon[15][1],2],
+                [bodyPolygon[0][0],bodyPolygon[0][1],3.5],
+                [bodyPolygon[1][0],bodyPolygon[1][1],3.5],
+                [bodyPolygon[2][0],bodyPolygon[2][1],4.5],
+                [bodyPolygon[15][0],bodyPolygon[15][1],4.5]],
+                faces = [[5,4,3,2,1,0],[0,6,9,5],[5,9,4],[4,9,8,3],[3,8,2],[2,8,7,1],[1,7,6,0],[6,7,8,9]]);
+            
         }
         union() {
+            //strap slot
+            translate([0,11,1]) cube([10,20,1.5]);
+            translate([8,11,1]) cube([2,20,2.5]);
+            
             //mounting holes
             translate([43,8.5,0]) {
                 cylinder(r=1,h=3,$fn=20);
@@ -24,7 +41,7 @@ union() {
             translate([43,21.5,0]) {
                 cylinder(r=1,h=3,$fn=20);
             }
-            //strap track
+            //backband track
             translate([35,10.25,1.75]) cube([48,9.5,2]);
             //flex gap
             translate([60.5,6.5,1]) cube([2.5,17,2]);
