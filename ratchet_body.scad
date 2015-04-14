@@ -19,10 +19,10 @@ union() {
         union() {
             //mounting holes
             translate([43,8.5,0]) {
-                cylinder(r=0.75,h=3,$fn=20);
+                cylinder(r=1,h=3,$fn=20);
             }
             translate([43,21.5,0]) {
-                cylinder(r=0.75,h=3,$fn=20);
+                cylinder(r=1,h=3,$fn=20);
             }
             //strap track
             translate([35,10.25,1.75]) cube([48,9.5,2]);
@@ -36,12 +36,23 @@ union() {
     
     //teeth (dz should be 3.75, reduced slightly to eliminate warning
     translate([56.5,11.5,3.749])
-    rotate([-90,0,0]) {
-        linear_extrude(height=7) {
-            polygon(points = [[0,0],[0,2],[2,2]]);
+    difference() {
+        rotate([-90,0,0]) {
+            linear_extrude(height=7) {
+                polygon(points = [[0,0],[0,2],[2,2]]);
+            }
+            linear_extrude(height=7) {
+                polygon(points = [[2,0],[2,2],[4,2]]);
+            }
         }
-        linear_extrude(height=7) {
-            polygon(points = [[2,0],[2,2],[4,2]]);
+        translate([-1,0,0])
+        rotate([0,90,0]) {
+            linear_extrude(height=8) {
+                polygon(points = [[-0.1,5],[-0.1,7.1],[2,7.1]]);
+            }
+            linear_extrude(height=8) {
+                polygon(points = [[-0.1,-0.1],[-0.1,2],[2,-0.1]]);
+            }
         }
     }
 }
