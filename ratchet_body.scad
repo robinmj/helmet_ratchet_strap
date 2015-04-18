@@ -6,7 +6,7 @@
 
 bodyPolygon = [[0,10],[0,20],[10,24],[20,27],[30,28.5],[40,29.5],[50,30],[68,30],[70,28],
 [70,2],[68,0],[50,0],[40,0.5],[30,1.5],[20,3],[10,6],
-[56,6],[63,6],[63,6.5],[58.5,6.5],[56.5,8.5],[56.5,21.5],[58.5,23.5],[63,23.5],[63,24],[56,24]];
+[56,7],[58,5],[63,4],[58.5,6.5],[56.5,8.5],[56.5,21.5],[58.5,23.5],[63,26],[58,25],[56,23]];
 
 union() {
     difference() {
@@ -44,7 +44,15 @@ union() {
             //backband track
             translate([35,10.25,1.75]) cube([48,9.5,2]);
             //flex gap
-            translate([60.5,6.5,1]) cube([2.5,17,2]);
+            translate([0,0,0.75])
+            linear_extrude(height=2) {
+                polygon(points = [[bodyPolygon[18][0],bodyPolygon[18][1]],
+                [bodyPolygon[19][0]+2,bodyPolygon[17][1]],
+                [bodyPolygon[22][0]+2,bodyPolygon[24][1]],
+                [bodyPolygon[23][0],bodyPolygon[23][1]]],
+                paths = [[0,1,2,3]],
+                convexity=6);
+            }
         }
     }
     
@@ -55,8 +63,8 @@ union() {
     translate([58.5,8.25,2]) sphere(r=1.75,$fn=20);
     translate([58.5,21.75,2]) sphere(r=1.75,$fn=20);
     
-    //teeth (dz should be 3.75, reduced slightly to eliminate warning
-    translate([56.5,11.5,3.749])
+    //teeth
+    translate([56.5,11.5,3.5])
     difference() {
         rotate([-90,0,0]) {
             linear_extrude(height=7) {
