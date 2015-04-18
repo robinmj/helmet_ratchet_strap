@@ -35,10 +35,16 @@ union() {
             translate([8,11,1]) cube([2,20,2.5]);
             
             //mounting holes
-            translate([43,8.5,0]) {
+            translate([36.5,8.5,0]) {
                 cylinder(r=1,h=3,$fn=20);
             }
-            translate([43,21.5,0]) {
+            translate([36.5,21.5,0]) {
+                cylinder(r=1,h=3,$fn=20);
+            }
+            translate([48,8.5,0]) {
+                cylinder(r=1,h=3,$fn=20);
+            }
+            translate([48,21.5,0]) {
                 cylinder(r=1,h=3,$fn=20);
             }
             //backband track

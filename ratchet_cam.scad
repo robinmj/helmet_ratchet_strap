@@ -24,13 +24,19 @@ union() {
         translate([24,13.25,3]) rotate([-90,0,0]) cylinder(r=1, h=3.75,$fn = 20);
         
         //stopper
-        translate([7,0,1.75]) cube([0.75,17,0.75]);
+        translate([13,0,1.75]) cube([0.75,17,0.75]);
         
         //mounting posts
-        translate([8.5,2,0]) {
-            cylinder(r=0.875,h=6.5,$fn=20);
+        translate([2,2,0]) {
+            cylinder(r=0.85,h=6.5,$fn=20);
         }
-        translate([8.5,15,0]) {
-            cylinder(r=0.875,h=6.5,$fn=20);
+        translate([2,15,0]) {
+            cylinder(r=0.85,h=6.5,$fn=20);
+        }
+        translate([13.5,2,0]) {
+            cylinder(r=0.8,h=6.5,$fn=20);
+        }
+        translate([13.5,15,0]) {
+            cylinder(r=0.8,h=6.5,$fn=20);
         }
 }
