@@ -47,8 +47,6 @@ union() {
             translate([48,21.5,0]) {
                 cylinder(r=1,h=3,$fn=20);
             }
-            //backband track
-            translate([35,10.25,1.75]) cube([48,9.5,2]);
             //flex gap
             translate([0,0,0.75])
             linear_extrude(height=2) {
@@ -70,7 +68,7 @@ union() {
     translate([58.5,21.75,2]) sphere(r=1.75,$fn=20);
     
     //teeth
-    translate([56.5,11.5,3.5])
+    translate([56.5,11.5,3.75])
     difference() {
         rotate([-90,0,0]) {
             linear_extrude(height=7) {
