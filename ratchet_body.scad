@@ -25,8 +25,20 @@ union() {
                 [bodyPolygon[0][0],bodyPolygon[0][1],3.5],
                 [bodyPolygon[1][0],bodyPolygon[1][1],3.5],
                 [bodyPolygon[2][0],bodyPolygon[2][1],4.5],
-                [bodyPolygon[15][0],bodyPolygon[15][1],4.5]],
-                faces = [[5,4,3,2,1,0],[0,6,9,5],[5,9,4],[4,9,8,3],[3,8,2],[2,8,7,1],[1,7,6,0],[6,7,8,9]]);
+                [bodyPolygon[15][0],bodyPolygon[15][1],4.5],
+                [bodyPolygon[14][0],bodyPolygon[14][1]+6,4.5],
+                [bodyPolygon[3][0],bodyPolygon[3][1]-6,4.5]],
+                faces = [[5,4,3,2,1,0],
+            [0,6,9,5],
+            [5,9,4],
+            [9,10,4],
+            [4,10,11,3],
+            [9,8,11,10],
+            [3,11,8],
+            [3,8,2],
+            [2,8,7,1],
+            [1,7,6,0],
+            [6,7,8,9]]);
             
         }
         union() {
