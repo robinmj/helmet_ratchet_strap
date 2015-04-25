@@ -6,16 +6,33 @@
 
 union() {
         difference() {
-            cube([26,17,4.5]);
             union() {
-                //strap track
-                translate([0,3.75,1.75]) cube([48,9.5,3]);
+                hull() {
+                    cube([15,17,4.5]);
+                    polyhedron(points=[[-14.5,-3.5,4.5],
+                    [-14.5,2.5,2.5],
+                    [-14.5,14.5,2.5],
+                    [-14.5,20.5,4.5],
+                    [-4.5,22,4.5],
+                    [15,22,4.5],
+                    [15,-5,4.5],
+                    [-4.5,-5,4.5]],
+                        faces=[[0,1,2,3],[3,4,5,6,7,0]]);
+                }
                 
                 //flex gap
-                translate([15,0,1]) cube([7,17,4]);
-                
+                translate([15,0,0]) cube([7,17,1]);
                 //flap flexer base
-                translate([22,0,3]) cube([7,17,2]);
+                translate([22,0,0]) cube([4,17,3]);
+            }
+            union() {
+                //backband track
+                translate([-9,3.75,1.75]) {
+                    cube([57,9.5,3]);
+                    rotate([-90,0,0]) linear_extrude(height=9.5) {
+                        polygon(points=[[0,-3],[0,0],[-5,-3]]);
+                    }
+                }
             }   
         }
         
@@ -24,7 +41,7 @@ union() {
         translate([24,13.25,3]) rotate([-90,0,0]) cylinder(r=1, h=3.75,$fn = 20);
         
         //stopper
-        translate([13,0,1.75]) cube([0.75,17,0.75]);
+        translate([13,0,1.75]) cube([2,17,0.75]);
         
         //mounting posts
         translate([2,2,0]) {
