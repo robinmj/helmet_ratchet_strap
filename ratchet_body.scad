@@ -59,6 +59,12 @@ union() {
             translate([48,21.5,0]) {
                 cylinder(r=1,h=3,$fn=20);
             }
+            translate([67,8.5,0]) {
+                cylinder(r=1,h=3,$fn=20);
+            }
+            translate([67,21.5,0]) {
+                cylinder(r=1,h=3,$fn=20);
+            }
             //flex gap
             translate([0,0,0.75])
             linear_extrude(height=2) {
@@ -76,8 +82,8 @@ union() {
     translate([0,19.5,2.7]) rotate([0,90,0]) cylinder(r=0.5,h=8,$fn=8);
     
     //flap buttons
-    translate([58.5,8.25,2]) sphere(r=1.75,$fn=20);
-    translate([58.5,21.75,2]) sphere(r=1.75,$fn=20);
+    translate([58.5,8.5,1.75]) sphere(r=1.5,$fn=20);
+    translate([58.5,21.5,1.75]) sphere(r=1.5,$fn=20);
     
     //teeth
     translate([56.5,11.5,3.75])
