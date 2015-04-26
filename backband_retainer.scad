@@ -10,9 +10,9 @@ difference() {
 }
 
 //mounting posts
-        translate([2,8.5,-3]) {
-            cylinder(r=0.85,h=6.5,$fn=20);
-        }
-        translate([2,21.5,-3]) {
-            cylinder(r=0.85,h=6.5,$fn=20);
-        }
+translate([3,8.5,-3]) {
+    cylinder(r=0.9,h=6.5,$fn=20);
+}
+translate([3,21.5,-3]) {
+    cylinder(r=0.9,h=6.5,$fn=20);
+}
