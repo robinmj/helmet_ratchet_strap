@@ -56,4 +56,19 @@ union() {
         translate([13.5,15,0]) {
             cylinder(r=0.8,h=6.5,$fn=20);
         }
+        
+        //flap flexer button
+        translate([24,0,-2]) {
+            translate([0,8.5,0])
+            difference() {
+                hull() {
+                    translate([0,0,0.5]) cylinder(r=9,h=1.5);
+                    cylinder(r=8.5,h=2);
+                }
+                translate([0,0,-18.5]) sphere(r=20);
+            }
+            translate([3.5,1.5,0]) cube([1,14,2]);
+            translate([-0.5,0,0]) cube([1,17,2]);
+            translate([-4.5,1.5,0]) cube([1,14,2]);
+        }
 }
