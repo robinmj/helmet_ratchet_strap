@@ -39,6 +39,10 @@ union() {
             [2,8,7,1],
             [1,7,6,0],
             [6,7,8,9]]);
+    
+            //flap buttons
+			   translate([58.5,8.5,1.75]) sphere(r=1.5,$fn=20);
+			   translate([58.5,21.5,1.75]) sphere(r=1.5,$fn=20);
             
         }
         union() {
@@ -66,13 +70,14 @@ union() {
                 cylinder(r=1,h=3,$fn=20);
             }
             //flex gap
-            translate([0,0,0.75])
-            linear_extrude(height=2) {
+            linear_extrude(height=1.25) {
                 polygon(points = [[bodyPolygon[18][0],bodyPolygon[18][1]],
-                [bodyPolygon[19][0]+2,bodyPolygon[17][1]],
-                [bodyPolygon[22][0]+2,bodyPolygon[24][1]],
+                [bodyPolygon[19][0],bodyPolygon[17][1]],
+                [bodyPolygon[20][0],bodyPolygon[16][1]],
+                [bodyPolygon[21][0],bodyPolygon[25][1]],
+                [bodyPolygon[22][0],bodyPolygon[24][1]],
                 [bodyPolygon[23][0],bodyPolygon[23][1]]],
-                paths = [[0,1,2,3]],
+                paths = [[0,1,2,3,4,5]],
                 convexity=6);
             }
         }
@@ -80,10 +85,6 @@ union() {
     
     //strap retainer
     translate([0,19.5,2.7]) rotate([0,90,0]) cylinder(r=0.5,h=8,$fn=8);
-    
-    //flap buttons
-    translate([58.5,8.5,1.75]) sphere(r=1.5,$fn=20);
-    translate([58.5,21.5,1.75]) sphere(r=1.5,$fn=20);
     
     //teeth
     translate([56.5,11.5,3.75])
