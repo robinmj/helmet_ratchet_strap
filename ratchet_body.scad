@@ -27,15 +27,19 @@ union() {
                 [bodyPolygon[1][0],bodyPolygon[1][1],3.5],
                 [bodyPolygon[2][0],bodyPolygon[2][1],4.5],
                 [bodyPolygon[15][0],bodyPolygon[15][1],4.5],
-                [bodyPolygon[14][0],bodyPolygon[14][1]+6,4.5],
-                [bodyPolygon[3][0],bodyPolygon[3][1]-6,4.5]],
-                faces = [[5,4,3,2,1,0],
+                [18,bodyPolygon[14][1]+6,5.15],
+                [18,bodyPolygon[3][1]-6,5.15],
+                [18,bodyPolygon[14][1]+6,2],
+                [18,bodyPolygon[3][1]-6,2]],
+                faces = [[5,4,12,13,3,2,1,0], //bottom
             [0,6,9,5],
             [5,9,4],
-            [9,10,4],
-            [4,10,11,3],
-            [9,8,11,10],
-            [3,11,8],
+            [9,10,4],//blended top facet, inner
+            [4,10,12], //triangular interface with cam, inner
+            [10,11,13,12], //rectangular interface with cam
+            [11,3,13], //triangular interface with cam, outer
+            [9,8,11,10], //top
+            [3,11,8],//blended top facet, outer
             [3,8,2],
             [2,8,7,1],
             [1,7,6,0],
