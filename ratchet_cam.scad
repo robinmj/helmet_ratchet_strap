@@ -58,17 +58,16 @@ union() {
         }
         
         //flap flexer button
-        translate([24,0,-2]) {
-            translate([0,8.5,0])
-            difference() {
-                hull() {
-                    translate([0,0,0.5]) cylinder(r=9,h=1.5);
-                    cylinder(r=8.5,h=2);
-                }
-                translate([0,0,-18.5]) sphere(r=20);
-            }
-            translate([3.5,1.5,0]) cube([1,14,2]);
-            translate([-0.5,0,0]) cube([1,17,2]);
-            translate([-4.5,1.5,0]) cube([1,14,2]);
+        translate([22,0,-1]) {
+				difference() {
+					minkowski() {
+          			cube([6,17,1]);
+						cylinder(h=1,r=1,$fn=10);
+					}
+					hull() {
+						translate([0,0,-1]) cube([6,17,1]);
+						translate([0.5,0.5,0]) cube([5,16,1]);
+					}
+				}
         }
 }
