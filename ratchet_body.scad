@@ -2,7 +2,7 @@
 // deformed before printing.
 // I do this in MeshLab using
 //  Filters->Smoothing, Fairing and Deformation->Geometric Function
-// and then entering in z+sqrt(80^2-(x-35)^2)-80 for the z function
+// and then entering in z+sqrt(90^2-(x-35)^2)-90 for the z function
 
 bodyPolygon = [[0,10],[0,20],[10,24],[20,27],[30,28.5],[40,29.5],[50,30],[68,30],[70,28],
 [70,2],[68,0],[50,0],[40,0.5],[30,1.5],[20,3],[10,6],
