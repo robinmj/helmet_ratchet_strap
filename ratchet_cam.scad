@@ -29,11 +29,8 @@ union() {
             }
             union() {
                 //backband track
-                translate([-11,3.75,1.75]) {
+                translate([-12,3.75,1.75]) {
                     cube([57,9.5,3]);
-                    rotate([-90,0,0]) linear_extrude(height=9.5) {
-                        polygon(points=[[0,-3],[0,0],[-5,-3]]);
-                    }
                 }
             }   
         }

@@ -43,9 +43,7 @@ module side() {
 	//end piece
 	rotate(28 * (2 * asin((toothWidth / 2) / (radius + toothSectionDepth))),[0,0,-1]) {
 		translate([0,radius,0]) {
-			linear_extrude(height=height) {
-				polygon(points = [[0,0], [0,1 + toothSectionDepth], [1 + toothSectionDepth,0]]);
-			}
+			cube([1,1+toothSectionDepth,height]);
 		}
 	}
 }
