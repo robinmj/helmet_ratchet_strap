@@ -24,8 +24,6 @@ union() {
                 
                 //flex gap
                 translate([15,0,0]) cube([7,17,1]);
-                //flap flexer base
-                translate([22,0,0]) cube([4,17,3]);
             }
             union() {
                 //backband track
@@ -37,7 +35,9 @@ union() {
         
         //flap flexers
         translate([24,3.75,3]) rotate([90,0,0]) cylinder(r=1, h=3.75,$fn = 20);
+		  translate([22,0,0]) cube([4,3.75,3]);
         translate([24,13.25,3]) rotate([-90,0,0]) cylinder(r=1, h=3.75,$fn = 20);
+		  translate([22,13.25,0]) cube([4,3.75,3]);
         
         //stopper
         translate([13,0,1.75]) cube([2,17,0.75]);
