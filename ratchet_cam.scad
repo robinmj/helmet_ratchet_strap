@@ -44,16 +44,16 @@ union() {
         
         //mounting posts
         translate([2,2,0]) {
-            cylinder(r=0.85,h=6.5,$fn=20);
+            cylinder(r=0.85,h=7,$fn=20);
         }
         translate([2,15,0]) {
-            cylinder(r=0.85,h=6.5,$fn=20);
+            cylinder(r=0.85,h=7,$fn=20);
         }
         translate([13.5,2,0]) {
-            cylinder(r=0.8,h=6.5,$fn=20);
+            cylinder(r=0.8,h=7,$fn=20);
         }
         translate([13.5,15,0]) {
-            cylinder(r=0.8,h=6.5,$fn=20);
+            cylinder(r=0.8,h=7,$fn=20);
         }
         
         //flap flexer button
