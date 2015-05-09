@@ -1,13 +1,3 @@
-/*intersection() {
-	linear_extrude(height=9) {
-		polygon(points = [[0,78], [78,0], [200,200]]);
-	}
-	
-	difference() {
-		cylinder(r=80,h=9,$fn=200);
-		cylinder(r=78,h=9,$fn=200);
-	}
-}*/
 
 radius = 80;
 height = 9;
@@ -17,12 +7,14 @@ toothSectionDepth = 2;
 rimHeight = 1;
 
 module tooth() {
-	difference() {
-		cube([toothWidth,toothSectionDepth,height]);
-		translate([0,0,rimHeight]) {
-			linear_extrude(height=height-(2 * rimHeight)) {
-				polygon(points = [[0,0], [toothWidth,toothDepth], [toothWidth,0]]);
-			}
+	cube([toothWidth,toothSectionDepth,rimHeight]);
+	translate([0,toothDepth,0]) cube([toothWidth,toothSectionDepth - toothDepth,height]);
+	translate([0,0,height-rimHeight]) cube([toothWidth,toothSectionDepth,rimHeight]);
+	translate([0,0,rimHeight]) {
+		linear_extrude(height=height-(2 * rimHeight)) {
+			polygon(points = [[0,toothDepth - toothSectionDepth],
+									 [0,toothDepth],
+									 [toothWidth,toothDepth]]);
 		}
 	}
 }
