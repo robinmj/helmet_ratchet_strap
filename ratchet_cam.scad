@@ -61,11 +61,11 @@ union() {
 				difference() {
 					minkowski() {
           			cube([6,17,1]);
-						cylinder(h=1,r=1,$fn=10);
+						cylinder(h=1,r=1.5,$fn=20);
 					}
 					hull() {
 						translate([0,0,-1]) cube([6,17,1]);
-						translate([0.5,0.5,0]) cube([5,16,1]);
+						translate([1,1,-0.5]) cube([4,16,1]);
 					}
 				}
         }
