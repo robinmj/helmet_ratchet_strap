@@ -2,8 +2,8 @@ translate([0,4,0]) cylinder(h=1.25,r=4);
 translate([86,-40,0]) cylinder(h=1.25,r=4);
 translate([0,4,0]) cylinder(h=3.5,r=1.25,$fn=10);
 translate([86,-40,0]) cylinder(h=3.5,r=1.25,$fn=10);
-translate([0,4,3]) sphere(h=3,r=1.5,$fn=10);
-translate([86,-40,3]) sphere(h=3,r=1.5,$fn=10);
+translate([0,4,3]) sphere(h=3,r=2,$fn=10);
+translate([86,-40,3]) sphere(h=3,r=2,$fn=10);
 //cube([185,8,1]);
 //translate([185,5,0]) rotate(-10) cube([70,3,1]);
 
