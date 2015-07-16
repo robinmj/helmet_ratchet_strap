@@ -9,16 +9,12 @@ translate([86,-40,3]) sphere(h=3,r=2,$fn=10);
 
 strap_width = 8.5;
 
-//bend point
-bpx = 125;
-bpy = strap_width;
-
 //end point
 epx = 135;
 epy = strap_width;
 
 linear_extrude(height=1.25)
-    polygon(points = [[0,0], [71,0],[82,-41],[90,-42],[125,0],[0,0],[epx,0],[epx,epy],[bpx,bpy],[0,8],[80,0],[88,-32],[115,0]], paths=[[0,1,2,3,4,5,6,7,8,9],[10,11,12]]);
+    polygon(points = [[0,0], [71,0],[82,-41],[90,-42],[125,0],[epx,0],[epx,epy],[0,8],[80,0],[88,-32],[115,0]], paths=[[0,1,2,3,4,5,6,7],[8,9,10]]);
     
 translate([epx,0])
 rotate([-90,0,0])
