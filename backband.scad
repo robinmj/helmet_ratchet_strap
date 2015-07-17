@@ -20,10 +20,10 @@ module tooth() {
 }
 
 module side() {
-	for(i = [0:27]) {
+	for(i = [0:24]) {
 		rotate(i * (2 * asin((toothWidth / 2) / (radius + toothSectionDepth))),[0,0,-1]) {
 			translate([0,radius,0]) {
-				if(i < 9) {
+				if(i < 6) {
 					cube([toothWidth,toothSectionDepth,height]);
 				} else {
 					tooth();
@@ -33,7 +33,7 @@ module side() {
 	}
 	
 	//end piece
-	rotate(28 * (2 * asin((toothWidth / 2) / (radius + toothSectionDepth))),[0,0,-1]) {
+	rotate(25 * (2 * asin((toothWidth / 2) / (radius + toothSectionDepth))),[0,0,-1]) {
 		translate([0,radius,0]) {
 			cube([1,1+toothSectionDepth,height]);
 		}
