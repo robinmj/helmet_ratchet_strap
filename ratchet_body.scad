@@ -89,7 +89,7 @@ union() {
     }
     
     //strap retainer
-    translate([0,19.5,2.7]) rotate([0,90,0]) cylinder(r=0.5,h=8,$fn=8);
+    translate([0.02,19.5,2.65]) rotate([0,88,0]) cylinder(r=0.5,h=7.5,$fn=8);
     
     //teeth
     translate([56.5,11.5,3.75])
